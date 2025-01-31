@@ -3,7 +3,6 @@ from webui import utils, audio, config
 import webui
 import sys
 import vc_infer_pipeline
-import ast
 from scipy.io import wavfile
 
 CWD = webui.get_cwd()
@@ -28,7 +27,7 @@ if __name__=="__main__":
 	#1 : 모델 경로(따옴표 붙어서 하나로)
 	#2 : 입력 오디오 경로(wav만)
 	#3 : f0_up_key (-12 ~ 12 사이의 정수)
-    #4 : f0_method (문자열 리스트)
+    #4 : f0_method (문자열)
     #5 : f0_autotune (True, False)
     #6 : merge_type ('mean', 'median')
     #7 : index_rate (0.00 ~ 1.00, 0.05 단위로 조정)
@@ -46,7 +45,7 @@ if __name__=="__main__":
 
 	state = {
     	'f0_up_key': int(sys.argv[3]),
-    	'f0_method': ast.literal_eval(sys.argv[4]),
+    	'f0_method': sys.argv[4],
     	'f0_autotune': sys.argv[5] == "True",
 		'merge_type': sys.argv[6],
     	'index_rate': float(sys.argv[7]),
