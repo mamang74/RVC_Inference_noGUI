@@ -3,7 +3,6 @@ psutil==5.9.5
 pyworld==0.3.2
 faiss-cpu==1.7.3
 monotonic_align==1.0.0
-fairseq==0.12.2
 onnxruntime-gpu==1.15
 onnxruntime==1.15
 torchcrepe==0.0.20
